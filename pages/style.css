@@ -1,0 +1,110 @@
+.carousel-item {
+    display: none;
+}
+.carousel-item.active {
+    display: block;
+}
+
+.services{
+    margin-top: -100px;
+    z-index: 2;
+}
+.selected {
+    @apply text-blue-500 border-b-2 border-blue-500;
+  }
+        .carousel-item {
+            display: none;
+        }
+        .carousel-item.active {
+            display: block;
+        }
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .rotate-infinite {
+            animation: rotate 4s linear infinite;
+        }
+  /******video********/
+ /* Infinite scroll animation for the circle */
+/* Infinite scroll animation for the circle */
+.animate-circle {
+      border: 3px solid transparent;
+      border-top-color: #70a5ff;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Hide modal by default */
+    #video-modal {
+      display: none;
+    }
+
+    /* Show modal when it has the class 'active' */
+    #video-modal.active {
+      display: flex;
+    }
+  /***********/
+   /*******Team**********/
+/* Hide the default scrollbar */
+.scrollbar-hidden {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
+
+  /* Active dot styling */
+
+  .group:hover .opacity-0 {
+    opacity: 1;
+}
+.group-hover\:scale-110:hover {
+  transform: scale(1.1);
+}
+#card-container {
+  display: flex;
+  overflow: hidden; /* Prevent overflow when cards are hidden */
+}
+
+#card-container > div {
+  flex: 1 0 auto; /* Allow cards to shrink and grow */
+  width: 33.333%; /* 3 cards per row for larger screens */
+}
+
+@media (max-width: 768px) {
+  #card-container > div {
+    width: 100%; /* Full width for single card on mobile */
+  }
+}
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #3b82f6; /* Active dot color */
+}

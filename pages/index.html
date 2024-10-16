@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../src/images/favicon.ico" type="image/x-icon"> 
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Projet Tailwind CSS</title>
+    <!-- Lien vers Tailwind CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+    <style>
+    
+   /**************************/
+
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+    <nav class="block w-full px-4 py-2 mx-auto bg-white sticky top-0 shadow lg:px-8 lg:py-0 backdrop-blur-lg backdrop-saturate-150 z-20">
+        <div class="container max-w-[1320px] px-6 mx-auto flex flex-wrap items-center justify-between text-slate-800">
+            <a href="#"
+                class="mr-4 block cursor-pointer text-base text-slate-800 font-semibold">
+              <img src="../src/images/logo-Royal-Clinic.png" alt="logo Royal Clinic">
+            </a>
+            <!-- Button for mobile menu -->
+            <button id="mobile-menu-btn" 
+                class="relative ml-auto h-6 max-h-[40px] w-6 max-w-[40px] select-none rounded-lg text-center align-middle text-xs font-medium uppercase text-inherit transition-all lg:hidden"
+                type="button">
+                <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </span>
+            </button>
+    
+            <!-- Menu items (hidden on mobile, visible on large screens) -->
+            <div class="hidden lg:block">
+                <ul class="flex flex-col gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+                  <li class="flex items-center border-b-2 border-transparent p-1 text-sm gap-x-2 text-slate-600 hover:text-blue-500 hover:border-blue-500 transition">
+                        <a href="#home" class="flex items-center">Home</a>
+                    </li>
+                    <li class="flex items-center border-b-2 border-transparent p-1 text-sm gap-x-2 text-slate-600 hover:text-blue-500 hover:border-blue-500 transition">
+                        <a href="#about" class="flex items-center">About</a>
+                    </li>
+                   
+                    <li class="flex items-center border-b-2 border-transparent p-1 text-sm gap-x-2 text-slate-600 hover:text-blue-500 hover:border-blue-500 transition">
+                      <a href="#services" class="flex items-center">Services</a>
+                  </li>
+                  <li class="flex items-center border-b-2 border-transparent p-1 text-sm gap-x-2 text-slate-600 hover:text-blue-500 hover:border-blue-500 transition">
+                        <a href="#team" class="flex items-center">Team</a>
+                    </li>
+                    <li class="flex items-center border-b-2 border-transparent p-1 text-sm gap-x-2 text-slate-600 hover:text-blue-500 hover:border-blue-500 transition">
+                      <a href="#blog" class="flex items-center">Blog</a>
+                  </li>
+                  <li class="flex items-center border-b-2 border-transparent p-1 text-sm gap-x-2 text-slate-600 hover:text-blue-500 hover:border-blue-500 transition">
+                      <a href="#contact" class="flex items-center">Contact</a>
+                  </li>
+                </ul>
+            </div>
+            
+            <!-- Mobile menu (hidden by default, shown when button clicked) -->
+            <div id="mobile-menu" class="hidden w-full mt-4 lg:hidden">
+                <ul class="flex flex-col gap-4 text-slate-600">
+                  <li><a href="#home" class="block py-2 hover:text-blue-500">Home</a></li>
+                    <li><a href="#about" class="block py-2 hover:text-blue-500">About</a></li>
+                  
+                    <li><a href="#services" class="block py-2 hover:text-blue-500">Services</a></li>
+                    <li><a href="#team" class="block py-2 hover:text-blue-500">Team</a></li>
+                    <li><a href="#blog" class="block py-2 hover:text-blue-500">Blog</a></li>
+                    <li><a href="#contact" class="block py-2 hover:text-blue-500">contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!---------Carousel--------->
+   <div class="relative w-full mt-6 h-50"  id="home"> <!-- Ajout de la hauteur -->
+    <!-- Carousel -->
+    <div class="carousel w-full h-full">
+        <div class="carousel-item active h-full">
+            <img src="../src/images/slide.jpg" class="w-full h-full object-cover rounded-lg" alt="Image 1">
+        </div>
+        <div class="carousel-item h-full">
+            <img src="../src/images/slide1.jpg" class="w-full h-full object-cover rounded-lg" alt="Image 2">
+        </div>
+        <div class="carousel-item h-full">
+            <img src="../src/images/slide2.jpg" class="w-full h-full object-cover rounded-lg" alt="Image 3">
+        </div>
+    </div>
+    <!-- Contrôles -->
+    <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow" onclick="prevSlide()">&#10094;</button>
+    <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white p-2 rounded-full shadow" onclick="nextSlide()">&#10095;</button>
+</div>
+<div class="container w-full px-24 mx-auto services">
+    <div class="row grid grid-cols-1 md:grid-cols-3 gap-0 item-center content-center">
+        <div class="col-md-4">
+                    <div class="card text-center bg-blue-300 shadow px-2 py-3 ">
+                        <div class="icon text-center m-auto">
+                            <svg style="width: 32px; margin:0 auto 10px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M192 96a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM120.5 247.2c12.4-4.7 18.7-18.5 14-30.9s-18.5-18.7-30.9-14C43.1 225.1 0 283.5 0 352c0 88.4 71.6 160 160 160c61.2 0 114.3-34.3 141.2-84.7c6.2-11.7 1.8-26.2-9.9-32.5s-26.2-1.8-32.5 9.9C240 440 202.8 464 160 464C98.1 464 48 413.9 48 352c0-47.9 30.1-88.8 72.5-104.8zM259.8 176l-1.9-9.7c-4.5-22.3-24-38.3-46.8-38.3c-30.1 0-52.7 27.5-46.8 57l23.1 115.5c6 29.9 32.2 51.4 62.8 51.4l5.1 0c.4 0 .8 0 1.3 0l94.1 0c6.7 0 12.6 4.1 15 10.4L402 459.2c6 16.1 23.8 24.6 40.1 19.1l48-16c16.8-5.6 25.8-23.7 20.2-40.5s-23.7-25.8-40.5-20.2l-18.7 6.2-25.5-68c-11.7-31.2-41.6-51.9-74.9-51.9l-68.5 0-9.6-48 63.4 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-76.2 0z"/></svg></div>
+                        <h3 class="text-3xl text-blue-100 font-semibold font-sans uppercase mb-2">Klinika numer 1 w Warszawie</h3>
+                        <p class="text-sm text-blue-100">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ex porro dignissimos cumque aliquid velit repellendus optio reiciendis, expedita reprehenderit esse quis quos voluptates enim.</p>
+                    </div>
+    
+        </div>
+        <div class="col-md-4">
+                <div class="card text-center bg-blue-400 shadow px-2 py-3">
+                    <div class="icon text-center m-auto">
+                        <svg style="width: 32px; margin:0 auto 10px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M228.3 469.1L47.6 300.4c-4.2-3.9-8.2-8.1-11.9-12.4l87 0c22.6 0 43-13.6 51.7-34.5l10.5-25.2 49.3 109.5c3.8 8.5 12.1 14 21.4 14.1s17.8-5 22-13.3L320 253.7l1.7 3.4c9.5 19 28.9 31 50.1 31l104.5 0c-3.7 4.3-7.7 8.5-11.9 12.4L283.7 469.1c-7.5 7-17.4 10.9-27.7 10.9s-20.2-3.9-27.7-10.9zM503.7 240l-132 0c-3 0-5.8-1.7-7.2-4.4l-23.2-46.3c-4.1-8.1-12.4-13.3-21.5-13.3s-17.4 5.1-21.5 13.3l-41.4 82.8L205.9 158.2c-3.9-8.7-12.7-14.3-22.2-14.1s-18.1 5.9-21.8 14.8l-31.8 76.3c-1.2 3-4.2 4.9-7.4 4.9L16 240c-2.6 0-5 .4-7.3 1.1C3 225.2 0 208.2 0 190.9l0-5.8c0-69.9 50.5-129.5 119.4-141C165 36.5 211.4 51.4 244 84l12 12 12-12c32.6-32.6 79-47.5 124.6-39.9C461.5 55.6 512 115.2 512 185.1l0 5.8c0 16.9-2.8 33.5-8.3 49.1z"/></svg>
+                    </div>
+                    <h3 class="text-3xl text-blue-100 font-semibold font-sans uppercase mb-2">Nowoczesny sprzęt oraz skuteczne terapie</h3>
+                    <p class="text-sm text-blue-100">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ex porro dignissimos cumque aliquid velit repellendus optio reiciendis, expedita reprehenderit esse quis quos voluptates enim.</p>
+                </div>
+    
+        </div>
+        <div class="col-md-4">
+                <div class="card text-center bg-blue-500 shadow px-2 py-3">
+                    <div class="icon text-center m-auto">
+                        <svg style="width: 36px; margin:0 auto 10px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M142.4 21.9c5.6 16.8-3.5 34.9-20.2 40.5L96 71.1 96 192c0 53 43 96 96 96s96-43 96-96l0-120.9-26.1-8.7c-16.8-5.6-25.8-23.7-20.2-40.5s23.7-25.8 40.5-20.2l26.1 8.7C334.4 19.1 352 43.5 352 71.1L352 192c0 77.2-54.6 141.6-127.3 156.7C231 404.6 278.4 448 336 448c61.9 0 112-50.1 112-112l0-70.7c-28.3-12.3-48-40.5-48-73.3c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3l0 70.7c0 97.2-78.8 176-176 176c-92.9 0-168.9-71.9-175.5-163.1C87.2 334.2 32 269.6 32 192L32 71.1c0-27.5 17.6-52 43.8-60.7l26.1-8.7c16.8-5.6 34.9 3.5 40.5 20.2zM480 224a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/></svg>
+                    </div>
+                    <h3 class="text-3xl text-blue-100 font-semibold font-sans uppercase mb-2">Wykwalifikowana kadra specjalistów</h3>
+                    <p class="text-sm text-blue-100">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ex porro dignissimos cumque aliquid velit repellendus optio reiciendis, expedita reprehenderit esse quis quos voluptates enim.</p>
+                </div>
+    
+        </div>
+    
+    
+    
+    
+    </div>
+</div>
+
+<div class="container mx-auto p-8"">
+    <!-------About section---------->
+
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6" id="about">
+      <!-- Card 1 - Takes up 4 columns on medium and larger screens -->
+      <div class="md:col-span-4 p-6 ">
+        <div class="photoAbout relative">
+          <img class="h-auto max-w-full z-1 rotate-infinite absolute top-20 left-8" src="../src/images/about1.png" alt="Royal Clinic">
+          <img class="h-auto max-w-full z-1 rotate-infinite absolute bottom-0 left-8" src="../src/images/about2.png" alt="Royal Clinic">
+          <img class="h-auto max-w-full z-1 rotate-infinite absolute bottom-32 left-28" src="../src/images/about3.png" alt="Royal Clinic">
+          <img class="h-auto max-w-full z-2 relative" src="../src/images/about.png" alt="Royal Clinic">
+        </div>
+      </div>
+
+      <!-- Card 2 - Takes up 8 columns on medium and larger screens -->
+      <div class="md:col-span-8 p-6 ">
+        <h5 class="font-bold text-xl text-blue-400">Welcome to Royal Clinic</h5>
+        <h1 class="font-bold text-xl md:text-5xl">The best Doctors & Physicians for a Healing Touch</h1>
+        <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate facere iste vitae nobis recusandae officiis quidem! Quos debitis dicta molestias id facere nesciunt magnam voluptate.</p>
+        <p class="mt-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, vitae similique harum asperiores dignissimos ipsa.</p>
+        <button id="show-button" 
+        class="text-white bg-blue-700 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-3 mt-5 dark:hover:bg-blue-500 focus:outline-none dark:focus:ring-blue-600" transition"
+        onclick="toggleContent()">Read more</button> 
+        <div id="hidden-content" class="hidden mt-4 p-4">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt, eaque numquam aspernatur officiis repellat voluptates voluptate consectetur perferendis, inventore consequuntur!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, aperiam quae adipisci maxime cum, harum impedit aliquam quibusdam fuga neque quisquam voluptatibus odit inventore totam ut temporibus corporis perferendis consequatur!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis recusandae dolor, unde veritatis saepe ex?</p>
+        </div>
+      </div>
+    </div>
+  
+<!-------End About section---------->
+<!---------section our achivement----------->
+
+<div class="flex justify-center mt-5">
+    <div class="flex flex-col items-center p-6 w-[80%]">
+        <h2 class="text-xl md:text-5xl font-bold text-blue-600 mb-3 transform transition uppercase tracking-tighter underline underline-offset-8">Our Achievements</h2>
+        <p class="indent-8 text-center mt-3">
+            So I started to walk into the water. I won't lie to you boys, I was
+            terrified. But I pressed on, and as I made my way past the breakers
+            a strange calm came over me. I don't know if it was divine intervention
+            or the kinship of all living things but I tell you Jerry at that moment,
+            I <em>was</em> a marine biologist.
+          </p>
+    </div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-5">
+
+    <!-- Item 1 -->
+    <div class="text-center content-center">
+      <h2 class="text-2xl font-bold mb-4  uppercase text-blue-700 ">successful</h2>
+      <div class="text-6xl font-bold text-blue-900"><span id="counter1">0</span>+</div>
+    </div>
+    <!-- Item 2 -->
+    <div class="text-center content-center">
+      <h2 class="text-2xl font-bold mb-4 uppercase text-blue-700 ">trusted slients</h2>
+      <div class="text-6xl font-bold text-blue-900"> <span id="counter2">0</span>+</div>
+    </div>
+    <!-- Item 3 -->
+    <div class="text-center content-center">
+      <h2 class="text-2xl font-bold mb-4 uppercase text-blue-700 ">world wide</h2>
+      <div class="text-6xl font-bold text-blue-900"><span id="counter3">0</span>+</div>
+    </div>
+    <!-- Item 4 -->
+    <div class="text-center content-center">
+      <h2 class="text-2xl font-bold mb-4 uppercase text-blue-700 ">award winner</h2>
+      <div class="text-6xl font-bold text-blue-900"><span  id="counter4">0</span>+</div>
+    </div>
+  </div>
+  
+
+<!---------End section our achivement----------->
+<!--------- section our Services----------->
+<div class="mt-5" id="services">
+
+        <h2 class="text-xl md:text-5xl font-bold text-blue-600 mb-3 transform transition uppercase tracking-tighter underline underline-offset-8 text-center">Our Services</h2>
+        <p class="indent-8 text-center mt-3 mb-5">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat praesentium nobis eius earum quibusdam consequatur obcaecati, nisi officiis necessitatibus! Optio.
+          </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-5">
+    <!-- Card 1 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center content-center hover:bg-blue-100 transition duration-300  group">
+        <svg class="m-auto  p-2 rounded-full transition duration-300 group-hover:bg-blue-800" xmlns="http://www.w3.org/2000/svg" height="50" width="53.5" viewBox="0 0 640 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#70a5ff" d="M320 0c17.7 0 32 14.3 32 32l0 132.1c0 16.4 8.4 31.7 22.2 40.5l9.8 6.2 0-45.5C384 127 415 96 453.3 96c21.7 0 42.8 10.2 55.8 28.8c15.4 22.1 44.3 65.4 71 116.9c26.5 50.9 52.4 112.5 59.6 170.3c.2 1.3 .2 2.6 .2 4l0 7c0 49.1-39.8 89-89 89c-7.3 0-14.5-.9-21.6-2.7l-72.7-18.2C414 480.5 384 442.1 384 398l0-73 90.5 57.6c7.5 4.7 17.3 2.5 22.1-4.9s2.5-17.3-4.9-22.1L384 287.1l0-.4-44.1-28.1c-7.3-4.6-13.9-10.1-19.9-16.1c-5.9 6-12.6 11.5-19.9 16.1L256 286.7 161.2 347l-13.5 8.6c0 0 0 0-.1 0c-7.4 4.8-9.6 14.6-4.8 22.1c4.7 7.5 14.6 9.7 22.1 4.9l91.1-58 0 73.4c0 44.1-30 82.5-72.7 93.1l-72.7 18.2c-7.1 1.8-14.3 2.7-21.6 2.7c-49.1 0-89-39.8-89-89l0-7c0-1.3 .1-2.7 .2-4c7.2-57.9 33.1-119.4 59.6-170.3c26.8-51.5 55.6-94.8 71-116.9c13-18.6 34-28.8 55.8-28.8C225 96 256 127 256 165.3l0 45.5 9.8-6.2c13.8-8.8 22.2-24.1 22.2-40.5L288 32c0-17.7 14.3-32 32-32z"/></svg>
+      <h2 class="text-xl font-bold mb-2">ْX Ray</h2>
+      <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet est repudiandae suscipit odio similique ratione doloribus consequuntur ea vel itaque.</p>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Learn More</button>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:bg-blue-100 transition duration-300  group">
+        <svg class="m-auto p-2 rounded-full transition duration-300 group-hover:bg-blue-800" xmlns="http://www.w3.org/2000/svg" height="50" width="53.5" viewBox="0 0 576 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#70a5ff" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/></svg>
+      <h2 class="text-xl font-bold mb-2">Eye Health</h2>
+      <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet est repudiandae suscipit odio similique ratione doloribus consequuntur ea vel itaque.</p>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Learn More</button>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center  hover:bg-blue-100 transition duration-300  group">
+        <svg class="m-auto p-2 rounded-full transition duration-300 group-hover:bg-blue-800" xmlns="http://www.w3.org/2000/svg" height="50" width="53.5" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#70a5ff" d="M186.1 52.1C169.3 39.1 148.7 32 127.5 32C74.7 32 32 74.7 32 127.5l0 6.2c0 15.8 3.7 31.3 10.7 45.5l23.5 47.1c4.5 8.9 7.6 18.4 9.4 28.2l36.7 205.8c2 11.2 11.6 19.4 22.9 19.8s21.4-7.4 24-18.4l28.9-121.3C192.2 323.7 207 312 224 312s31.8 11.7 35.8 28.3l28.9 121.3c2.6 11.1 12.7 18.8 24 18.4s20.9-8.6 22.9-19.8l36.7-205.8c1.8-9.8 4.9-19.3 9.4-28.2l23.5-47.1c7.1-14.1 10.7-29.7 10.7-45.5l0-2.1c0-55-44.6-99.6-99.6-99.6c-24.1 0-47.4 8.8-65.6 24.6l-3.2 2.8 19.5 15.2c7 5.4 8.2 15.5 2.8 22.5s-15.5 8.2-22.5 2.8l-24.4-19-37-28.8z"/></svg>
+      <h2 class="text-xl font-bold mb-2">Dontal Care</h2>
+      <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet est repudiandae suscipit odio similique ratione doloribus consequuntur ea vel itaque.</p>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Learn More</button>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center hover:bg-blue-100 transition duration-300  group">
+      <svg class="m-auto p-2 rounded-full transition duration-300 group-hover:bg-blue-800" xmlns="http://www.w3.org/2000/svg" height="50" width="53.5" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#70a5ff" d="M184 0c30.9 0 56 25.1 56 56l0 400c0 30.9-25.1 56-56 56c-28.9 0-52.7-21.9-55.7-50.1c-5.2 1.4-10.7 2.1-16.3 2.1c-35.3 0-64-28.7-64-64c0-7.4 1.3-14.6 3.6-21.2C21.4 367.4 0 338.2 0 304c0-31.9 18.7-59.5 45.8-72.3C37.1 220.8 32 207 32 192c0-30.7 21.6-56.3 50.4-62.6C80.8 123.9 80 118 80 112c0-29.9 20.6-55.1 48.3-62.1C131.3 21.9 155.1 0 184 0zM328 0c28.9 0 52.6 21.9 55.7 49.9c27.8 7 48.3 32.1 48.3 62.1c0 6-.8 11.9-2.4 17.4c28.8 6.2 50.4 31.9 50.4 62.6c0 15-5.1 28.8-13.8 39.7C493.3 244.5 512 272.1 512 304c0 34.2-21.4 63.4-51.6 74.8c2.3 6.6 3.6 13.8 3.6 21.2c0 35.3-28.7 64-64 64c-5.6 0-11.1-.7-16.3-2.1c-3 28.2-26.8 50.1-55.7 50.1c-30.9 0-56-25.1-56-56l0-400c0-30.9 25.1-56 56-56z"/></svg>
+      <h2 class="text-xl font-bold mb-2">Family Low</h2>
+      <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet est repudiandae suscipit odio similique ratione doloribus consequuntur ea vel itaque.</p>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Learn More</button>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center  hover:bg-blue-100 transition duration-300  group">
+      <svg class="m-auto p-2 rounded-full transition duration-300 group-hover:bg-blue-800" xmlns="http://www.w3.org/2000/svg" height="50" width="53.5" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#70a5ff" d="M192 96a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM120.5 247.2c12.4-4.7 18.7-18.5 14-30.9s-18.5-18.7-30.9-14C43.1 225.1 0 283.5 0 352c0 88.4 71.6 160 160 160c61.2 0 114.3-34.3 141.2-84.7c6.2-11.7 1.8-26.2-9.9-32.5s-26.2-1.8-32.5 9.9C240 440 202.8 464 160 464C98.1 464 48 413.9 48 352c0-47.9 30.1-88.8 72.5-104.8zM259.8 176l-1.9-9.7c-4.5-22.3-24-38.3-46.8-38.3c-30.1 0-52.7 27.5-46.8 57l23.1 115.5c6 29.9 32.2 51.4 62.8 51.4l5.1 0c.4 0 .8 0 1.3 0l94.1 0c6.7 0 12.6 4.1 15 10.4L402 459.2c6 16.1 23.8 24.6 40.1 19.1l48-16c16.8-5.6 25.8-23.7 20.2-40.5s-23.7-25.8-40.5-20.2l-18.7 6.2-25.5-68c-11.7-31.2-41.6-51.9-74.9-51.9l-68.5 0-9.6-48 63.4 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-76.2 0z"/></svg>
+      <h2 class="text-xl font-bold mb-2">Orthopedic</h2>
+      <p class="text-gray-700 mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit libero ducimus recusandae dicta eligendi. Natus!</p>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Learn More</button>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center  hover:bg-blue-100 transition duration-300  group">
+      <svg class="m-auto p-2 rounded-full transition duration-300 group-hover:bg-blue-800" xmlns="http://www.w3.org/2000/svg" height="50" width="53.5" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#70a5ff" d="M416 0c17.7 0 32 14.3 32 32c0 59.8-30.3 107.5-69.4 146.6c-28 28-62.5 53.5-97.3 77.4l-2.5 1.7c-11.9 8.1-23.8 16.1-35.5 23.9c0 0 0 0 0 0s0 0 0 0s0 0 0 0l-1.6 1c-6 4-11.9 7.9-17.8 11.9c-20.9 14-40.8 27.7-59.3 41.5l118.5 0c-9.8-7.4-20.1-14.7-30.7-22.1l7-4.7 3-2c15.1-10.1 30.9-20.6 46.7-31.6c25 18.1 48.9 37.3 69.4 57.7C417.7 372.5 448 420.2 448 480c0 17.7-14.3 32-32 32s-32-14.3-32-32L64 480c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-59.8 30.3-107.5 69.4-146.6c28-28 62.5-53.5 97.3-77.4c-34.8-23.9-69.3-49.3-97.3-77.4C30.3 139.5 0 91.8 0 32C0 14.3 14.3 0 32 0S64 14.3 64 32l320 0c0-17.7 14.3-32 32-32zM338.6 384l-229.2 0c-10.1 10.6-18.6 21.3-25.5 32l280.2 0c-6.8-10.7-15.3-21.4-25.5-32zM109.4 128l229.2 0c10.1-10.7 18.6-21.3 25.5-32L83.9 96c6.8 10.7 15.3 21.3 25.5 32zm55.4 48c18.4 13.8 38.4 27.5 59.3 41.5c20.9-14 40.8-27.7 59.3-41.5l-118.5 0z"/></svg>
+      <h2 class="text-xl font-bold mb-2">Medical Laboratory Tests</h2>
+      <p class="text-gray-700 mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit libero ducimus recusandae dicta eligendi. Natus!</p>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Learn More</button>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center  hover:bg-blue-100 transition duration-300  group">
+     <svg class="m-auto p-2 rounded-full transition duration-300 group-hover:bg-blue-800" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" height="50" width="53.5" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><g><path d="M304.656,4.62c-5.425-1.047-10.666,2.507-11.709,7.93c-1.044,5.423,2.506,10.666,7.93,11.709 C411.621,45.573,492,143.034,492,256c0,130.131-105.869,236-236,236S20,386.131,20,256C20,145.277,95.258,50.685,203.013,25.97 c5.384-1.235,8.746-6.6,7.512-11.983c-1.235-5.383-6.604-8.746-11.982-7.511C143.002,19.215,92.603,50.797,56.628,95.404 C20.11,140.683,0,197.717,0,256c0,68.38,26.629,132.667,74.98,181.019C123.333,485.372,187.62,512,256,512 s132.667-26.628,181.02-74.981C485.371,388.667,512,324.38,512,256C512,133.463,424.8,27.743,304.656,4.62z" fill="#000000" style="fill: rgb(80, 142, 242);"></path></g></g><g><g><path d="M256.771,0.001L256,0c-5.522,0-10,4.477-10,10s4.478,10,10,10l0.731,0.001c0.007,0,0.014,0,0.02,0 c5.514,0,9.989-4.464,10-9.98C266.762,4.498,262.293,0.012,256.771,0.001z" fill="#000000" style="fill: #70a5ff"></path></g></g><g><g><path d="M452.671,281.162c-5.436-0.97-10.63,2.651-11.601,8.088C425.074,378.918,347.241,444,256,444 c-103.664,0-188-84.336-188-188S152.336,68,256,68c43.17,0,83.686,14.934,115.973,40.263c-18.561,8.321-31.53,26.96-31.53,48.583 c0,18.319-14.904,33.223-33.224,33.223c-23.868,0-44.116,15.793-50.845,37.478c-3.643-2.852-7.823-5.044-12.365-6.394 c1.049-4.935,2.28-8.005,3.662-11.446c1.746-4.349,3.727-9.277,5.125-17.564c2.718-16.102-1.928-32.355-13.082-45.767 c-13.454-16.175-35.108-26.437-56.515-26.779c-38.896-0.647-71.24,30.516-72.03,69.414c-0.232,11.479,2.34,22.934,7.438,33.126 c2.676,5.351,3.126,11.454,1.234,16.745c-5.376,15.037-7.982,30.821-7.745,46.914c0.506,34.466,14.718,67.256,40.019,92.329 c25.299,25.071,58.215,38.99,92.687,39.193c0.264,0.001,0.527,0.002,0.791,0.002c6.878,0,13.779-0.527,20.526-1.568 c19.164-2.957,36.671-12.742,49.296-27.552c7.037-8.254,12.311-17.778,15.597-27.964c4.174,2.193,8.909,3.431,13.903,3.43 c0.101,0,0.202,0,0.302-0.001c16.375-0.164,29.696-13.84,29.696-30.487v-25.807c0-17.147-8.627-32.897-23.076-42.133 c-10.803-6.902-23.545-9.321-35.792-7.092c-0.751-6.895-3.841-13.261-8.868-18.167c-5.734-5.598-13.302-8.668-21.32-8.528 c-3.602,0.044-7.097,0.723-10.364,1.971c4.213-13.516,16.843-23.354,31.727-23.354c29.348,0,53.224-23.876,53.224-53.224 c0-16.921,12.719-30.918,29.096-32.958c24.886,25.058,42.899,57.164,50.482,93.444c1.13,5.406,6.427,8.873,11.834,7.743 c5.406-1.13,8.872-6.428,7.742-11.834c-8.404-40.207-28.858-77.255-58.241-106.006c-0.464-0.557-0.991-1.057-1.564-1.502 c-3.794-3.637-7.726-7.144-11.804-10.496C350.929,64.775,304.055,48,256,48C141.309,48,48,141.309,48,256s93.309,208,208,208 c49.119,0,96.794-17.443,134.244-49.115c37.007-31.298,62.05-74.668,70.516-122.122 C461.73,287.326,458.109,282.132,452.671,281.162z M237.001,239.991c7.207,1.533,12.768,7.548,13.63,14.978l-6.416,6.574 l-27.452-9.147c1.476-0.705,2.923-1.349,4.337-1.979C226.611,247.961,232.562,245.305,237.001,239.991z M279.068,254.465 c1.865-1.911,4.363-2.982,7.034-3.015c2.689-0.027,5.194,0.977,7.106,2.844c1.911,1.865,2.982,4.363,3.015,7.033 c0.033,2.671-0.977,5.194-2.843,7.106l-0.786,0.806c-2.374,2.019-4.545,4.249-6.492,6.653l-14.977,15.348 c-6.729,6.896-16.185,10.85-25.944,10.85c-3.864,0-7.662-0.613-11.289-1.823l-41.035-13.687 c-5.242-1.749-10.903,1.083-12.65,6.322c-1.747,5.239,1.083,10.903,6.322,12.65l41.035,13.687 c5.671,1.892,11.599,2.851,17.617,2.851c10.553,0,20.891-3,29.732-8.46v23.706c0,5.523,4.478,10,10,10c5.522,0,10-4.477,10-10 v-29.963c0-6.685,2.25-13.054,6.167-18.192l5.122-5.25c1.854-1.484,3.897-2.759,6.106-3.782c9.338-4.323,20.09-3.596,28.759,1.944 c8.67,5.541,13.846,14.991,13.846,25.28v25.807c0,5.729-4.439,10.433-9.896,10.488c-0.034,0-0.067,0-0.101,0 c-5.135,0-9.446-3.917-9.946-8.998V315c0-5.523-4.478-10-10-10c-5.522,0-10,4.477-10,10v20.179 c-0.041,30.6-21.869,56.174-51.901,60.808c-5.96,0.92-12.03,1.377-18.15,1.332c-60.272-0.354-111.94-51.56-112.824-111.816 c-0.202-13.691,2.012-27.11,6.579-39.886c3.719-10.401,2.925-22.219-2.179-32.424c-3.705-7.409-5.498-15.409-5.329-23.775 c0.562-27.645,23.311-49.829,50.89-49.829c0.274,0,0.55,0.002,0.824,0.006c15.741,0.252,31.627,7.751,41.458,19.571 c5.212,6.266,10.958,16.496,8.738,29.648c-1.04,6.162-2.395,9.535-3.963,13.439c-1.903,4.736-4.059,10.105-5.608,19.842 c-0.892,5.604-2.287,6.374-10.545,10.052c-2.27,1.012-4.843,2.158-7.62,3.592l-0.2,0.103 c-6.812,3.476-10.843,10.634-10.271,18.234c0.567,7.543,5.582,13.966,12.775,16.363l32.57,10.853 c5.802,1.939,12.318,0.363,16.597-4.02L279.068,254.465z" fill="#000000" style="fill: rgb(80, 142, 242);"></path></g></g><g><g><path d="M454,246c-5.522,0-10,4.477-10,10l-0.003,1.117c-0.027,5.523,4.427,10.022,9.95,10.05c0.017,0,0.034,0,0.051,0 c5.499,0,9.972-4.444,9.999-9.95L464,256C464,250.477,459.522,246,454,246z" fill="#000000" style="fill: rgb(80, 142, 242);"></path></g></g></svg>
+      <h2 class="text-xl font-bold mb-2">Embryology</h2>
+      <p class="text-gray-700 mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit libero ducimus recusandae dicta eligendi. Natus!</p>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Learn More</button>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="bg-white p-6 rounded-lg shadow-lg text-center  hover:bg-blue-100 transition duration-300  group">
+      <svg class="m-auto p-2 rounded-full transition duration-300 group-hover:bg-blue-800" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"  height="50" width="53.5" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="236.9375" y1="-22.7822" x2="236.9375" y2="474.1438" gradientTransform="matrix(1.0667 0 0 -1.0667 3.2667 557.5339)"><stop offset="0" style="stop-color:#D63305"></stop><stop offset="0.117" style="stop-color:#D8360C"></stop><stop offset="0.288" style="stop-color:#DD3E20"></stop><stop offset="0.492" style="stop-color:#E44C40"></stop><stop offset="0.722" style="stop-color:#EF606C"></stop><stop offset="0.97" style="stop-color:#FD78A5"></stop><stop offset="1" style="stop-color:#FF7BAC"></stop></linearGradient><path style="fill: #70a5ff;" d="M384,48.734c-70.692,0-128,57.308-128,128c0-70.692-57.308-128-128-128s-128,57.308-128,128 c0,137.424,188.048,252.681,241.805,282.821c8.823,4.947,19.567,4.947,28.39,0C323.952,429.416,512,314.158,512,176.734 C512,106.042,454.692,48.734,384,48.734z" fill="url(#SVGID_1_)"></path><linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="325.8795" y1="171.7697" x2="67.0295" y2="430.6198" gradientTransform="matrix(1.0667 0 0 -1.0667 3.2667 557.5339)"><stop offset="1.000000e-004" style="stop-color:#D63305;stop-opacity:0"></stop><stop offset="1" style="stop-color:#B72401"></stop></linearGradient><path style="fill: rgb(46, 192, 255);" d="M241.805,459.555c8.823,4.947,19.567,4.947,28.39,0 c39.633-22.222,152.254-90.716,208.7-180.244h-0.019c0.559-0.887,1.122-1.774,1.671-2.666c0.002-0.003,0.004-0.006,0.006-0.011 H366.455c-9.45,0-18.3,3.612-24.946,9.937c-0.048-0.037-0.093-0.077-0.141-0.114l-50.838-50.838 c-2.814-3.655-7.203-5.773-12.058-5.578c-6.22,0.251-11.439,4.251-13.296,10.191l-5.964,19.068l-55.458-55.305 c-2.606-3.428-6.663-5.559-11.249-5.655c-6.732-0.154-12.406,4.07-14.271,10.478l-15.622,53.683 c-2.422,8.322-10.166,14.134-18.834,14.134H31.446c0.002,0.003,0.004,0.006,0.006,0.011c2.528,4.11,5.177,8.175,7.931,12.195 c0.129,0.188,0.257,0.377,0.386,0.563c0.892,1.295,1.792,2.586,2.705,3.871h0.806l101.293,102.025 C184.437,426.065,222.124,448.521,241.805,459.555z" fill="url(#SVGID_2_)"></path><path style="" d="M480.554,276.636H366.455c-12.487,0-23.935,6.297-30.621,16.845l-13.059,20.602l-30.228-74.946 c-2.329-5.773-7.823-9.344-14.074-9.092c-6.22,0.251-11.439,4.251-13.296,10.191l-28.706,91.774l-30.149-122.601 c-1.593-6.48-7.147-10.928-13.818-11.068c-6.732-0.154-12.406,4.07-14.271,10.478l-15.622,53.683 c-2.422,8.322-10.166,14.134-18.834,14.134H31.446c3.462,5.63,7.147,11.179,11.028,16.64h101.303 c16.02,0,30.334-10.742,34.812-26.125l13.44-46.186l30.075,122.306c1.577,6.414,7.071,10.861,13.671,11.067 c0.159,0.004,0.316,0.006,0.474,0.006c6.402,0,11.936-4.05,13.86-10.203l29.198-93.346l29.564,73.296 c2.05,5.082,6.714,8.547,12.17,9.044c5.455,0.501,10.669-2.07,13.604-6.698l15.245-24.05c3.616-5.707,9.81-9.114,16.566-9.114 h103.071C473.407,287.815,477.091,282.266,480.554,276.636z" fill="#FFFFFF"></path></svg>
+      <h2 class="text-xl font-bold mb-2">Cardiovascular Diseases</h2>
+      <p class="text-gray-700 mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit libero ducimus recusandae dicta eligendi. Natus!</p>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Learn More</button>
+    </div>
+  </div>
+<!----------Card----------->
+<div>
+
+</div>
+
+
+</div>
+</div>
+<!---------End section our Services----------->
+<!------------Video exelelent services-------------->
+<!-- Section with background image and play button -->
+<section class="relative h-screen w-full bg-cover bg-center flex items-center justify-center my-10" style="background-image: url('../src/images/bgVideo.png');">
+    
+  <!-- Play button with animated circle -->
+  <div class="relative flex items-center justify-center z-10">
+    <!-- Outer animated circle -->
+    <div class="animate-circle"></div>
+
+    <!-- Inner play button -->
+    <div class="relative w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center z-20 cursor-pointer" id="play-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M5 3v18l15-9L5 3z"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Video Modal (hidden by default) -->
+<div id="video-modal" class="fixed inset-0 bg-black bg-opacity-75 items-center justify-center z-50">
+  <div class="relative bg-white w-full max-w-4xl p-6 rounded-lg">
+    <button id="close-btn" class="absolute top-2 right-4 text-black text-2xl bg-blue-600 text-white rounded-full px-2">&times;</button>
+    <iframe id="video-iframe" class="w-full h-96" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+<!------------End Video exelelent services--------------->
+
+
+<!--------team--------->
+<div class="relative my-10" id="team">
+  <h2 class="text-xl md:text-5xl font-bold text-blue-600 mb-3 transform transition uppercase tracking-tighter underline underline-offset-8 text-center">Our Team</h2>
+  <!-- Card container -->
+  <div id="card-container" class="flex overflow-hidden scroll-smooth snap-x snap-mandatory scrollbar-hidden">
+   
+    <!-- Cards -->
+      <!-------------------->
+      <div class="max-w-sm mx-10 my-10 text-center group">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <!-- Image avec effet de zoom -->
+          <img class="w-full h-40 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" src="../src/images/doctor1.png" alt="docteur">
+          
+          <!-- Card Body -->
+          <div class="p-6">
+            <h2 class="text-xl font-bold mb-2 text-blue-500">Name Docter</h2>
+            <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quasi accusantium quas labore. Beatae veritatis iusto dolorem temporibus? Expedita, corporis?</p>
+            
+            <!-- Social Icons avec transition d'opacité -->
+            <div class="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <a href="#" class="text-blue-500 hover:text-blue-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                  <path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"></path>
+                </svg> 
+              </a>
+              <a href="#" class="text-blue-500 hover:text-blue-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                  <path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path></svg>
+              </a>
+              <a href="#" class="text-blue-500 hover:text-blue-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                  <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path></svg>
+
+              </a>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <!---------------------->
+  
+      <div class="max-w-sm mx-10 my-10 text-center group">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <!-- Image avec effet de zoom -->
+          <img class="w-full h-40 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" src="../src/images/doctor2.png" alt="docteur">
+          
+          <!-- Card Body -->
+          <div class="p-6">
+            <h2 class="text-xl font-bold mb-2 text-blue-500">Name Docter</h2>
+            <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quasi accusantium quas labore. Beatae veritatis iusto dolorem temporibus? Expedita, corporis?</p>
+            
+            <!-- Social Icons avec transition d'opacité -->
+            <div class="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <a href="#" class="text-blue-500 hover:text-blue-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                  <path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"></path>
+                </svg> 
+              </a>
+              <a href="#" class="text-blue-500 hover:text-blue-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                  <path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path></svg>
+              </a>
+              <a href="#" class="text-blue-500 hover:text-blue-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                  <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path></svg>
+
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!------------------>
+    <div class="max-w-sm mx-10 my-10 text-center group">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <!-- Image avec effet de zoom -->
+        <img class="w-full h-40 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" src="../src/images/doctor3.png" alt="docteur">
+        
+        <!-- Card Body -->
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2 text-blue-500">Name Docter</h2>
+          <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quasi accusantium quas labore. Beatae veritatis iusto dolorem temporibus? Expedita, corporis?</p>
+          
+          <!-- Social Icons avec transition d'opacité -->
+          <div class="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"></path>
+              </svg> 
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path></svg>
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path></svg>
+
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!------------------->
+    <div class="max-w-sm mx-10 my-10 text-center group">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <!-- Image avec effet de zoom -->
+        <img class="w-full h-40 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" src="../src/images/doctor4.png" alt="docteur">
+        
+        <!-- Card Body -->
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2 text-blue-500">Name Docter</h2>
+          <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quasi accusantium quas labore. Beatae veritatis iusto dolorem temporibus? Expedita, corporis?</p>
+          
+          <!-- Social Icons avec transition d'opacité -->
+          <div class="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"></path>
+              </svg> 
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path></svg>
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path></svg>
+
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!------------>
+    <div class="max-w-sm mx-10 my-10 text-center group">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <!-- Image avec effet de zoom -->
+        <img class="w-full h-40 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" src="../src/images/doctor5.png" alt="docteur">
+        
+        <!-- Card Body -->
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2 text-blue-500">Name Docter</h2>
+          <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quasi accusantium quas labore. Beatae veritatis iusto dolorem temporibus? Expedita, corporis?</p>
+          
+          <!-- Social Icons avec transition d'opacité -->
+          <div class="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"></path>
+              </svg> 
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path></svg>
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path></svg>
+
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!------------------->
+    <div class="max-w-sm mx-10 my-10 text-center group">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <!-- Image avec effet de zoom -->
+        <img class="w-full h-40 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" src="../src/images/doctor6.png" alt="docteur">
+        
+        <!-- Card Body -->
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2 text-blue-500">Name Docter</h2>
+          <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quasi accusantium quas labore. Beatae veritatis iusto dolorem temporibus? Expedita, corporis?</p>
+          
+          <!-- Social Icons avec transition d'opacité -->
+          <div class="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"></path>
+              </svg> 
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path></svg>
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path></svg>
+
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-------------------->
+    <div class="max-w-sm mx-10 my-10 text-center group">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <!-- Image avec effet de zoom -->
+        <img class="w-full h-40 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" src="../src/images/doctor7.png" alt="docteur">
+        
+        <!-- Card Body -->
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2 text-blue-500">Name Docter</h2>
+          <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quasi accusantium quas labore. Beatae veritatis iusto dolorem temporibus? Expedita, corporis?</p>
+          
+          <!-- Social Icons avec transition d'opacité -->
+          <div class="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"></path>
+              </svg> 
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path></svg>
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path></svg>
+
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--------------->
+    <div class="max-w-sm  mx-10 my-10 text-center group">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <!-- Image avec effet de zoom -->
+        <img class="w-full h-40 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" src="../src/images/doctor8.png" alt="docteur">
+        
+        <!-- Card Body -->
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2 text-blue-500">Name Docter</h2>
+          <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quasi accusantium quas labore. Beatae veritatis iusto dolorem temporibus? Expedita, corporis?</p>
+          
+          <!-- Social Icons avec transition d'opacité -->
+          <div class="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"></path>
+              </svg> 
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path></svg>
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path></svg>
+
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-------------------->
+    <div class="max-w-sm mx-10 my-10 text-center group">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <!-- Image avec effet de zoom -->
+        <img class="w-full h-40 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" src="../src/images/doctor9.png" alt="docteur">
+        
+        <!-- Card Body -->
+        <div class="p-6">
+          <h2 class="text-xl font-bold mb-2 text-blue-500">Name Docter</h2>
+          <p class="text-gray-700 mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quasi accusantium quas labore. Beatae veritatis iusto dolorem temporibus? Expedita, corporis?</p>
+          
+          <!-- Social Icons avec transition d'opacité -->
+          <div class="flex justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z"></path>
+              </svg> 
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"></path></svg>
+            </a>
+            <a href="#" class="text-blue-500 hover:text-blue-700">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" style="fill: rgba(59, 130, 246, 1);transform: ;msFilter:;">
+                <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path></svg>
+
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination Dots -->
+  <div id="dots-container" class="flex justify-center space-x-2 mt-4"></div>
+</div>
+
+
+<!-------End team--------->
+
+<!-----------section Blog------------->
+
+<div class="bg-blue-500 w-full py-10 relative" id="blog">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row">
+    <!-- Contenu à gauche dans un conteneur -->
+    <div class="w-full md:w-1/2 p-5 text-white">
+      <h2 class="text-xl md:text-5xl font-bold text-blue-100 mb-3 transform transition uppercase tracking-tighter underline underline-offset-8 text-center">We are at your service 24/7</h2>
+      <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui velit maiores tempore debitis inventore quis odit voluptate a perspiciatis ea.</p>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore, sunt in.</p>
+      <ul class="list-disc pl-5 space-y-2">
+        <li class="text-base md:text-lg text-gray-100">Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
+        <li class="text-base md:text-lg text-gray-100">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum quis in ducimus.</li>
+        <li class="text-base md:text-lg text-gray-100">Lorem ipsum dolor sit amet.</li>
+        <li class="text-base md:text-lg text-gray-100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse?</li>
+        <li class="text-base md:text-lg text-gray-100">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga exercitationem libero vero, minima nihil repellendus.</li>
+        <li class="text-base md:text-lg text-gray-100">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</li>
+        <li class="text-base md:text-lg text-gray-100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur ratione aspernatur quisquam placeat.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Image positionnée à droite, en dehors du conteneur -->
+  <div class="relative md:absolute right-0 top-0 h-full w-full md:w-1/2">
+    <img src="../src/images/Blog.png" alt="Image Exemple" class="object-cover h-full w-full">
+  </div>
+</div>
+
+
+
+
+
+<!-----------section Blog-------------->
+
+
+<!---------Contact------->
+<div class="container mx-auto py-10 px-20 z-1 relative" id="contact">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Card 1 -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden text-center">
+      <div class="p-6 text-center">
+        <svg class="m-auto" xmlns="http://www.w3.org/2000/svg" height="46" width="50" viewBox="0 0 384 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#5291ff" d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+        <p class="text-gray-600 mt-4">Juliana Konstantego Ordona 5/U6, 01-237 Warszawa, Pologne</p>
+
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden text-center">
+
+      <div class="p-6 text-center">
+        <svg class="m-auto" xmlns="http://www.w3.org/2000/svg" height="46" width="50" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#669eff" d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+        <p class="text-gray-600 mt-4"><span class="font-bold">Contact us:</span><br><a href="tel:+48 22 230 23 00">+48 22 230 23 00</a><</p>
+      
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden text-center">
+
+      <div class="p-6 text-center">
+        <svg class="m-auto" xmlns="http://www.w3.org/2000/svg" height="46" width="50" viewBox="0 0 512 512">
+          <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#6ba1ff" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
+        </svg>
+        <p class="text-gray-600 mt-4"><a href="mailto:recepcja@royal-clinic.pl">recepcja@royal-clinic.pl</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--------------------->
+
+<!------footer---------->
+
+<footer class="bg-blue-900 w-full text-white pt-32 pb-8" style="margin-top: -100px;">
+  <div class="container mx-auto text-center">
+    <!-- Logo Section -->
+    <div class="mb-4">
+      <img src="../src/images/logo-Royal-Clinic-footer.png" alt="royal clinic" class="mx-auto">
+    </div>
+
+    <!-- Social Links Section -->
+    <div class="mb-4">
+      <ul class="flex justify-center space-x-6">
+        <li>
+          <a href="https://www.facebook.com/royalclinic.warszawa/" target="_blank" aria-label="Facebook" class="hover:text-gray-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 8h-3v4h3v12h5v-12h3.64l.36-4h-4v-1.76c0-.92.3-1.24 1.22-1.24h2.78v-5h-3.77c-3.19 0-4.81 1.55-4.81 4.52v3.48z"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/royalclinic.warszawa/" target="_blank" aria-label="Instagram" class="hover:text-gray-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.2c3.2 0 3.584.01 4.849.07 1.17.057 1.946.24 2.405.402a4.89 4.89 0 0 1 1.73 1.073c.478.464.852 1.028 1.073 1.73.16.46.344 1.236.401 2.405.061 1.265.07 1.648.07 4.849s-.01 3.584-.07 4.849c-.057 1.17-.24 1.946-.401 2.405a4.89 4.89 0 0 1-1.073 1.73c-.464.478-1.028.852-1.73 1.073-.46.16-1.236.344-2.405.401-1.265.061-1.648.07-4.849.07s-3.584-.01-4.849-.07c-1.17-.057-1.946-.24-2.405-.401a4.89 4.89 0 0 1-1.73-1.073c-.478-.464-.852-1.028-1.073-1.73-.16-.46-.344-1.236-.401-2.405-.061-1.265-.07-1.648-.07-4.849s.01-3.584.07-4.849c.057-1.17.24-1.946.401-2.405a4.89 4.89 0 0 1 1.073-1.73c.464-.478 1.028-.852 1.73-1.073.46-.16 1.236-.344 2.405-.401C8.416 2.21 8.8 2.2 12 2.2m0-2.2C8.74 0 8.332.01 7.056.07c-1.279.061-2.155.246-2.908.52a7.17 7.17 0 0 0-2.625 1.646 7.17 7.17 0 0 0-1.646 2.625c-.274.753-.459 1.629-.52 2.908C.01 8.332 0 8.74 0 12s.01 3.668.07 4.944c.061 1.279.246 2.155.52 2.908a7.17 7.17 0 0 0 1.646 2.625 7.17 7.17 0 0 0 2.625 1.646c.753.274 1.629.459 2.908.52C8.332 23.99 8.74 24 12 24s3.668-.01 4.944-.07c1.279-.061 2.155-.246 2.908-.52a7.17 7.17 0 0 0 2.625-1.646 7.17 7.17 0 0 0 1.646-2.625c.274-.753.459-1.629.52-2.908C23.99 15.668 24 15.26 24 12s-.01-3.668-.07-4.944c-.061-1.279-.246-2.155-.52-2.908a7.17 7.17 0 0 0-1.646-2.625 7.17 7.17 0 0 0-2.625-1.646c-.753-.274-1.629-.459-2.908-.52C15.668.01 15.26 0 12 0zM12 5.838a6.162 6.162 0 0 0-6.162 6.162A6.162 6.162 0 0 0 12 18.162a6.162 6.162 0 0 0 6.162-6.162A6.162 6.162 0 0 0 12 5.838zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-10.841a1.44 1.44 0 1 0 0-2.881 1.44 1.44 0 0 0 0 2.881z"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Copyright Section -->
+    <div>
+      <p class="text-sm text-gray-400">&copy; 2024 Your Company Name. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-------footer--------->
+
+
+
+</body>
+</html>
